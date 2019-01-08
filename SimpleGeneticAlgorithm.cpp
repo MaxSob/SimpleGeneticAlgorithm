@@ -8,6 +8,7 @@
 
 using namespace std;
 
+//Constructor of the class SimpleGeneticAlgorithm
 SimpleGeneticAlgorithm::SimpleGeneticAlgorithm(int chromosome_size, int population_size, int tournament_size, int generations, double mutation_probability, double cross_probability) {
 	this->chromosome_size = chromosome_size;
 	this->population_size = population_size;
@@ -23,16 +24,20 @@ SimpleGeneticAlgorithm::SimpleGeneticAlgorithm(int chromosome_size, int populati
 	cout << "Best individual of generation 0 " << this->best.print() << endl;
 }
 
+//Destructor of the class SimpleGeneticAlgorithm
 SimpleGeneticAlgorithm::~SimpleGeneticAlgorithm() { this->population.resize(0); }
 
+//This function return a random number in an interval between to integers
 int SimpleGeneticAlgorithm::getRandomNumber(int low, int high){ return ((int) rand() / RAND_MAX) * (high-low) + low; }
 
+//This function initializes the population of the algorithm
 void SimpleGeneticAlgorithm::initializePopulation() {
 	for(int i=0; i < this->population_size; i++)
 		this->population[i] = Individual(this->chromosome_size);
 	this->best = this->population[0];
 }
 
+//This function converts a bit_Srting into an int
 int toInt(string bit_string, int length){
     int temp;
     int num=0;
@@ -43,6 +48,7 @@ int toInt(string bit_string, int length){
     return num;
 }
 
+//This function obtains the fenotype of an individual
 string getFenotype(Individual ind) {    
      string fenotype = "";
 
