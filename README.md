@@ -16,7 +16,8 @@ The algorithm is implemented following the next steps:
 
 ## Use
 You can extend the main class simple genetic algorithm to change the evaluation function in order to find the best individual that you are interested in. Below is an example of a calss extended from SimpleGeneticAlgorithm which finds individuals with the first seven digits set to 0's:
-´´´javascript
+
+```javascript
 #include <stdlib.h>
 #include <string>
 #include <iostream>
@@ -38,5 +39,6 @@ class SevenZeros: public SimpleGeneticAlgorithm {
 		return error;
 	}
 };
-´´´
+```
+
 
