@@ -1,0 +1,4 @@
+*.o
+main
+individuals.txt
+error.txt
