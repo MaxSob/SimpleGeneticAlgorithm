@@ -37,19 +37,8 @@ void SimpleGeneticAlgorithm::initializePopulation() {
 	this->best = this->population[0];
 }
 
-//This function converts a bit_Srting into an int
-int toInt(string bit_string, int length){
-    int temp;
-    int num=0;
-    for(int i=0; i<length; i++){
-        temp=bit_string[i]-'0';
-        num |= (1 << (length-1-i)) * temp;
-    }
-    return num;
-}
-
 //This function obtains the fenotype of an individual
-string getFenotype(Individual ind) {    
+string SimpleGeneticAlgorithm::getFenotype(Individual ind) {    
      string fenotype = "";
 
     for(int i=0; i<ind.size(); i++) {
@@ -86,7 +75,8 @@ double SimpleGeneticAlgorithm::evaluate() {
 	for(int i=0; i < this->population_size; i++) {
 		double error = this->evaluateIndividual(this->population[i]);
         this->population[i].evaluation = error;
-        cout << "Evaluating individual " << i << " ->" << this->population[i].print() << " Score: " << this->population[i].evaluation  << endl;
+        //cout << "Evaluating individual " << i << " ->" << this->population[i].print() << " Score: " << this->population[i].evaluation  << endl;
+        cout << "Evaluating individual " << i << " ->" << this->getFenotype(this->population[i]) << " Score: " << this->population[i].evaluation  << endl;
         if(error < min_error) {
 			min_error = error;
 			if(this->best_output >= error)

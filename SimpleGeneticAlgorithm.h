@@ -20,11 +20,14 @@ class SimpleGeneticAlgorithm {
     	double best_output;
 		Individual best;
 		std::vector<Individual> population;
-		SimpleGeneticAlgorithm(int chromosome_size, int population_size, int tournament_size, int generations, double mutation_probability, double cross_probability);
+		SimpleGeneticAlgorithm(int chromosome_size, int population_size, 
+			int tournament_size, int generations, double mutation_probability, 
+			double cross_probability);
 		~SimpleGeneticAlgorithm();
 		int getRandomNumber(int low, int high);
 		void initializePopulation();
 		double virtual evaluateIndividual(Individual i);
+		std::string virtual getFenotype(Individual i);
 		double evaluate();
 		void select();
 		void cross();
