@@ -14,12 +14,12 @@ int main(int argc, char* argv[]) {
 	srand(time(NULL));
 	int wait = 1;
    //All ones
-   SimpleGeneticAlgorithm sga = SimpleGeneticAlgorithm(10, 100, 5, 30, 0.05, 0.95);
+   SimpleGeneticAlgorithm sga = SimpleGeneticAlgorithm(10, 101, 5, 30, 0.05, 0.95);
    sga.crosssValidation();
    cout << "Best individual all ones " << sga.best.print() << " -> Score: " << sga.best_output << endl;
    cin >> wait;
    //Exactly seven ones
-   SevenOnes sones = SevenOnes(10, 100, 5, 30, 0.05, 0.95);
+   SevenOnes sones = SevenOnes(10, 99, 5, 30, 0.05, 0.95);
    sones.crosssValidation();
    cout << "Best individual exactly seven ones " << sones.best.print() << " -> Score: " << sones.best_output << endl;
    cin >> wait;

@@ -19,8 +19,8 @@ SimpleGeneticAlgorithm::SimpleGeneticAlgorithm(int chromosome_size, int populati
 	
 	this->population = vector<Individual>(this->population_size);
 	this->initializePopulation();
-    this->best_output = this->evaluateIndividual(this->best);
-    this->best.evaluation = this->best_output;
+	this->best_output = this->evaluateIndividual(this->best);
+	this->best.evaluation = this->best_output;
 	cout << "Best individual of generation 0 " << this->best.print() << endl;
 }
 
@@ -50,7 +50,7 @@ string SimpleGeneticAlgorithm::getFenotype(Individual ind) {
     return fenotype;
 }
 
-//Returns thwe string representation of the best individual of a given generation
+//Returns the string representation of the best individual of a given generation
 string getBestLine(int i, Individual best, double error) {
     string representation = "";
     representation += to_string(i) + "," + best.print() + ",";
@@ -119,7 +119,8 @@ void SimpleGeneticAlgorithm::cross() {
 	//Shuffle index
 	vector<Individual> new_population(this->population_size);
 	
-	for(int i=0; i<this->population_size/2;i++) {
+	int i=0;
+	for(i=0; i<this->population_size/2;i++) {
 		Individual i1 = this->population[2*i];
 		Individual i2 = this->population[2*i + 1];
 		if(c.toss()) {
@@ -130,6 +131,10 @@ void SimpleGeneticAlgorithm::cross() {
 		}
 		new_population[2*i] = i1;
 		new_population[2*i + 1] = i2;
+	}
+
+	if(this->population_size %2 !=0) {
+		new_population[2*i] = this->population[2*i];
 	}
 	this->population = new_population;
 }
