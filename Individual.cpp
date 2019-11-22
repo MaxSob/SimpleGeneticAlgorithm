@@ -6,7 +6,9 @@ using namespace std;
 
 Individual::Individual() {
 	Individual(5);
+	this->evaluation = 0;
 }
+
 Individual::Individual(int lenght) {
 	Coin c = Coin(0.5);
 	this->lenght = lenght;
