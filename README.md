@@ -1,6 +1,6 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/76636b4d2fb74ecfb5cb7d0030db50df)](https://www.codacy.com/manual/MaxSob/SimpleGeneticAlgorithm?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MaxSob/SimpleGeneticAlgorithm&amp;utm_campaign=Badge_Grade)
 # Simple Genetic Algorithms
-Basic implementation of a simple genetic algorithm in C++
+Basic implementation of a simple genetic algorithm in C++. This code is licensed as free software, feel free to use it as you need ;)
 
 ## Classes
 Classes used by the Simple Genetic Algorithm:
